@@ -1,3 +1,4 @@
+// 1. Apply string data type
 let name1: string = "Baktash khan";
 console.log(name1)
 
