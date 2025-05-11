@@ -35,12 +35,12 @@ console.log(item + item2)
 
 console.log("---------------- Type inference with number -------------------")
 
-let preis = 19.99; // TypeScript erkennt automatisch: preis ist eine Zahl (number)
+// let preis = 19.99; // TypeScript erkennt automatisch: preis ist eine Zahl (number)
 
 console.log(typeof preis); // Ausgabe: "number"
 
 console.log("---------------- Decimal with number data type -------------------")
-let preis1: number = 19.99; // Dezimalzahl
+// let preis1: number = 19.99; // Dezimalzahl
 let steuer: number = 0.19;
 
 let gesamt = preis1 + (preis1 * steuer);

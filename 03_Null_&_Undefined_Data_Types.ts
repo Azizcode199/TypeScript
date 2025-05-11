@@ -6,12 +6,12 @@
 let auto: string | null = null;
 
 
-var userName: null | string = null;
+var userName1: null | string = null;
 var login = true;
 
 if (login) {
     userName = "Baktash jan";
-    console.log(userName);
+    console.log(userName1);
 }
 
 
