@@ -22,7 +22,7 @@ let mitarbeiterDetail: {
   city: 'Hamburg',
   company: 'Mercedes', // kann auch weggelassen werden
   address: {
-    hausnummer: 'Rampe 12',
+    hausnummer: 'Rampe 1',
     PLZ: '21245',
     Ort: 'Seevetal'
   }
