@@ -1,46 +1,31 @@
-// 1. Apply string data type
-let name1: string = "Baktash khan";
-console.log(name1)
+// 1. String-Datentyp anwenden
+let name1: string = "Baktash Khan";
+console.log(name1);
 
-//  2. Ways to define string
-// Erklärung: Es gibt mehrere Arten, einen String zu schreiben
+// 2. Verschiedene String-Schreibweisen
+let text1: string = "Hallo";
+let text2: string = 'Welt';
+let text3: string = `Hallo ${name1}`;
 
-let text1: string = "Hallo";     // mit doppelten Anführungszeichen
-let text2: string = 'Welt';      // mit einfachen Anführungszeichen
-let text3: string = `Hallo ${name1}`; // mit Template-String
-
-// 3. Convert in string data type
-// Erklärung: Eine Zahl oder boolean in Text umwandeln
-
+// 3. Umwandlung in String
 let zahl: number = 100;
-let textVonZahl: string = zahl.toString(); // "100"
+let textVonZahl: string = zahl.toString();
 
 let wahr: boolean = true;
-let textVonBool: string = String(wahr);    // "true"
+let textVonBool: string = String(wahr);
 
-// 4. Apply boolean data type
-// Erklärung: Wahr/Falsch-Wert mit Typ boolean
+// 4. Boolean-Datentyp anwenden
 let istAktiv: boolean = true;
-
-// 5. Possible boolean values
-// Erklärung: Es gibt nur zwei gültige Werte für boolean
 let status1: boolean = true;
 let status2: boolean = false;
 
-// 6. Inference and declaration issues
-// Erklärung: TypeScript erkennt Typ automatisch, aber Achtung bei falscher Zuweisung
-
-let preis = 19.99;       // TypeScript erkennt: number
-// preis = "zwanzig";    // Fehler: string ist nicht erlaubt
+// 5. Typinferenz und Typprüfung
+let preis = 19.99;       // automatisch: number
+// preis = "zwanzig";    // Fehler
 
 let flag: boolean;
 flag = true;
-// flag = "ja";          //  Fehler: string ist kein boolean
+// flag = "ja";          //  Fehler
 
-// 7. Run with HTML file
-// Erklärung: TypeScript wird zu JavaScript kompiliert und im HTML verwendet
-
-// <!-- user.html -->
-// <script src="app.js"></script>
+// 6. Ausgabe
 console.log(name1, text1, textVonZahl, istAktiv, status1);
-
