@@ -68,6 +68,19 @@ let age1: number = 30;
 let username: string = "Baktash";
 let isLoggedIn: boolean = true;
 
+console.log("-----------------------------------------")
+// Funktion zur Addition von zwei Zahlen mit klarer Typangabe
+function sum(a: number, b: number): number {
+  return a + b;
+}
+
+// Funktionsaufruf mit Beispielwerten
+const result: number = sum(5, 4);
+
+// Ausgabe des Ergebnisses
+console.log(`Die Summe ist: ${result}`);
+
+
 
 
 
