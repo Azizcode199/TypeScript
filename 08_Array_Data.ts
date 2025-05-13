@@ -115,4 +115,44 @@ console.log("-------ForEach--------")
 namen.forEach((n: string) => {
   console.log(n);
 });
+console.log("---------------------------------------")
+// ----------------------------------------------------------------------------
+// | Methode    | Was sie macht                     | Gibt neues Array zurück? |
+// | ---------- | --------------------------------- | ------------------------ |
+// | `map()`    | Wandelt **jedes Element** um      | ✅ ja                    |
+// | `filter()` | Behalte nur **passende Elemente** | ✅ ja                    |
+// -----------------------------------------------------------------------------
+// TypeScript Array: map() und filter() einfach erklärt
+// 🔁 map() – Jedes Element umwandeln
+// map() erstellt ein neues Array, indem jedes Element verändert wird.
+console.log("---Map method---")
+const zahlen2: number[] = [1, 2, 3];
+const verdoppelt:number[] = zahlen2.map((x:number) => x * 2);
+
+console.log(verdoppelt); // [2, 4, 6]
+
+console.log("---Konvert auf To.String()")
+const numbertoString = zahlen2.map((s:number) => s.toString())
+console.log(numbertoString)
+
+// filter() – Elemente herausfiltern
+// filter() erstellt ein neues Array, das nur die Elemente enthält, 
+// die eine Bedingung erfüllen.
+
+console.log("---Filter ---")
+const zahlen3: number[] = [1, 2, 3, 4, 5];
+const gerade:number[] = zahlen3.filter((x:number) => x % 2 === 0);
+
+console.log(gerade); // [2, 4]
+
+console.log("noch Beispiel ")
+
+// Was ist startsWith()?
+// Die Methode startsWith() prüft, ob ein String mit einem bestimmten 
+// Text beginnt.
+const namen1: string[] = ["Anna", "Ben", "Alina", "Tom"];
+
+const mitA: string[] = namen1.filter((name) => name.startsWith("A"));
+
+console.log(mitA); // ["Anna", "Alina"]
 
