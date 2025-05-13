@@ -67,3 +67,53 @@ personDetails.address.plz = "100000"
 personDetails.address.handyNumber = 1000000
 console.log(personDetails)
 
+console.log("-------- Beispiel Verschachteltes --------")
+
+// Typdefinition mit verschachteltem Objekt
+type Student = {
+  name: string;
+  alter: number;
+  istStudnent:boolean;
+  adresse: {
+    stadt: string;
+    straße: string;
+    plz: number;
+  };
+};
+
+// Objekt nach diesem Typ
+const student1: Student = {
+  name: "Hanna",
+  alter: 22,
+  istStudnent: true,
+  adresse: {
+    stadt: "Berlin",
+    straße: "Musterstraße 5",
+    plz: 10115,
+  },
+};
+
+const student2: Student = {
+  name: "Ben",
+  alter: 24,
+  istStudnent:true,
+  adresse: {
+    stadt: "Hamburg",
+    straße: "Elbestraße 12",
+    plz: 20095,
+  },
+};
+
+// Zugriff auf verschachtelte Werte
+console.log(student1.name);             // "Hanna"
+console.log(student1.adresse.stadt);    // "Berlin"
+console.log(student1.adresse.plz);      // 10115
+
+console.log("----------------for Each --------------")
+const studenten: Student[] = [student1, student2];
+
+// Alle Namen anzeigen
+studenten.forEach((s) => {
+  console.log(`${s.name} wohnt in ${s.adresse.stadt}`);
+});
+
