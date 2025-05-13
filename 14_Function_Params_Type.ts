@@ -69,3 +69,30 @@ console.log(isPalindrome("otto"));       // true
 console.log(isPalindrome("Anna"));       // true
 console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
 console.log(isPalindrome("hello"));      // false
+
+
+console.log("Verstehen von Optionalen und Standardparametern in TypeScript-Funktionen");
+console.log("*****************************************************************************")
+
+const pruefungsTag = (name: string, tag: string,id: number = 2): string => {
+  return `Willkommen, Herr/Frau ${name}. Bitte erscheine am ${tag}.📝 Deine Prüfungs-ID ist ${id}. `;
+};
+
+// Aufruf der Funktion
+console.log(pruefungsTag("Anna", "Montag"));
+console.log("--------------************-----------------")
+const bestanden = (name: string, tag: string, id?: number): string => {
+  let nachricht = `🎉 Herzlichen Glückwunsch, Herr/Frau ${name}! Sie haben die Prüfung bestanden.\n`;
+  nachricht += `Bitte erscheinen Sie am ${tag}, um Ihr Zeugnis abzuholen.\n`;
+
+  if (id) {
+    nachricht += `📝 Ihre Prüfungs-ID lautet: ${id}.`;
+  }
+
+  return nachricht.trim();
+};
+
+// Aufrufe
+console.log(bestanden("Anna", "Montag"));
+console.log(bestanden("Hann", "Montag", 3));
+
