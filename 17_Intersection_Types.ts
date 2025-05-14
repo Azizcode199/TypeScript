@@ -54,3 +54,29 @@ const profile: EmployeeProfile = {
     employeeId: "A123",
     department: "IT"
 };
+
+console.log("--------------------------------------------------")
+type FahrzeugInfo = {
+  marke: string;
+  baujahr: number;
+};
+
+type StandortInfo = {
+  stadt: string;
+  parkplatz: string;
+};
+
+// Kombinierter Typ (Intersection)
+type FahrzeugStandort = FahrzeugInfo & StandortInfo;
+
+const auto12: FahrzeugStandort = {
+  marke: "Tesla",
+  baujahr: 2023,
+  stadt: "Meckelfeld",
+  parkplatz: "REWE - Reifloge 3"
+};
+
+
+
+
+console.log(`🚗 ${auto12.marke} (Baujahr ${auto12.baujahr}) steht in ${auto12.stadt} auf ${auto12.parkplatz}.`);
