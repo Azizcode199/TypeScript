@@ -97,13 +97,13 @@ function printPersonInfo(person: Info): void {
 // Zusatzfunktion für Lehrer:
 function printTeacherSubjects(teacher: TeacherUniSubject): void {
     printPersonInfo(teacher);
-    console.log(`Fächer: ${teacher.subject.join(", ")}`);
+    console.log(`Fächer: ${teacher.subject.join(", ")}\n`);
 }
 
 // Zusatzfunktion für Studenten:
 function printStudentAddress(student: StudentUniInfo): void {
     printPersonInfo(student);
-    console.log(`Adresse: ${student.address.straße}, ${student.address.ort} ${student.address.PLZ}`);
+    console.log(`Adresse: ${student.address.straße}, ${student.address.ort} ${student.address.PLZ}\n`);
 }
 
 // Aufrufe:
@@ -111,37 +111,67 @@ printTeacherSubjects(teacherUni);
 printStudentAddress(studentUni);
 printPersonInfo(mitarbeiterUni);
 
-
+console.log("+++++++++++++++++++++++++++++++++++++++++++++++++")
 // Einzelteile
 interface Engine {
-    type: string;
-    horsepower: number;
+  type: string;
+  horsepower: number;
 }
 
 interface Wheels {
-    count: number;
-    size: number;
+  count: number;
+  size: number;
 }
 
-// Auto wird aus Teilen "zusammengesetzt" = Komposition
 interface Car {
-    brand: string;
-    model: string;
-    engine: Engine;
-    wheels: Wheels;
+  brand: string;
+  model: string;
+  engine: Engine;
+  wheels: Wheels;
+  speed: number;
+  accelerate1: (value: number) => void;
 }
 
 
-const myCar: Car = {
-    brand: "Toyota",
-    model: "Corolla",
-    engine: {
-        type: "Hybrid",
-        horsepower: 121
-    },
-    wheels: {
-        count: 4,
-        size: 16
-    }
-};
+const autos: Car[] = [
+  {
+      brand: "Toyota",
+      model: "Corolla",
+      engine: { type: "Hybrid", horsepower: 121 },
+      wheels: { count: 4, size: 16 },
+      speed: 0,
+      accelerate1(value: number) {
+          this.speed += value;
+          const engineInfo = `Typ: ${this.engine.type}, PS: ${this.engine.horsepower}`;    
+          console.log(`🚗 ${this.brand} beschleunigt auf ${this.speed} km/h`);
+          console.log(`🔧 Motor: ${engineInfo}\n`);
+      },
+      accelerate: function (value: number): void {
+          throw new Error("Function not implemented.");
+      }
+  },
+  {
+      brand: "BMW",
+      model: "i3",
+      engine: { type: "Elektro", horsepower: 170 },
+      wheels: { count: 4, size: 18 },
+      speed: 0,
+      accelerate1(value: number) {
+          this.speed += value;
+          const engineInfo = `Typ: ${this.engine.type}, PS: ${this.engine.horsepower}`;    
+          console.log(`⚡ ${this.brand} beschleunigt auf ${this.speed} km/h`);
+          console.log(`🔧 Motor: ${engineInfo}`);
+      },
+      accelerate: function (value: number): void {
+          throw new Error("Function not implemented.");
+      }
+  }
+];
 
+autos.forEach((auto) => {
+  auto.accelerate1(50);
+});
+console.log("++++++++++++++++++++++++++++++")
+for (const auto of autos) {
+  auto.accelerate1(30); 
+}
