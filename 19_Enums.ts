@@ -50,3 +50,56 @@ enum werType{
 for (let key in werType) {
   console.log(`${key} → ${werType[key as keyof typeof werType]}`);
 }
+
+
+console.log("--------Real life Example ------------")
+
+enum Rolle {
+  Admin = "ADMIN",
+  User = "USER",
+  Gast = "GUEST"
+}
+
+type Benutzer_Rolle = {
+  benutzername: string;
+  passwort: string;
+  rolle: Rolle;
+};
+
+const adminBenutzer: Benutzer_Rolle = {
+  benutzername: "admin1",
+  passwort: "1234",
+  rolle: Rolle.Admin,
+};
+
+const normalerBenutzer: Benutzer_Rolle = {
+  benutzername: "Anna",
+  passwort: "pass123",
+  rolle: Rolle.User,
+};
+
+const GastBenutzer: Benutzer_Rolle = {
+  benutzername: "Anna",
+  passwort: "pass123",
+  rolle: Rolle.Gast,
+};
+
+const login_Benutzer = (benutzer: Benutzer_Rolle): string => {
+  switch (benutzer.rolle) {
+    case Rolle.Admin:
+      return `Willkommen Admin ${benutzer.benutzername}! Du hast volle Rechte.`;
+    case Rolle.User:
+      return `Willkommen ${benutzer.benutzername}. Du hast eingeschränkten Zugriff.`;
+    case Rolle.Gast:
+      return `Hallo Gast. Bitte logge dich ein.`;
+    default:
+      return `Unbekannte Rolle.`;
+  }
+};
+
+//Test:
+console.log(login_Benutzer(adminBenutzer));
+console.log(login_Benutzer(normalerBenutzer));
+console.log(login_Benutzer(GastBenutzer));
+
+
