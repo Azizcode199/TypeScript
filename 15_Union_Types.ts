@@ -93,3 +93,35 @@ console.log(benutzerInfo(30)); // number
 console.log(benutzerInfo(true)); // boolean
 console.log(benutzerInfo(["Anna", "Lea", "Mia", "Lukas", "Paul", "Jonas"])); // array
 console.log(benutzerInfo({ name: "Anna", age: 25, stadt: "Hamburg" })); // object
+
+
+console.log("-----------------------------------------------------------------------------------------------")
+
+const zeigeEingabe = (wert: string | number | boolean): void => {
+  console.log(` Eingabewert: ${wert}`);
+};
+
+// Beispielaufrufe
+zeigeEingabe(10);             
+zeigeEingabe("Hello World");  
+zeigeEingabe(true);     
+
+console.log("--------------------------------------------------------------------------------------------------")
+
+const inputEingabe = (wert: string | number | boolean): string => {
+  if (typeof wert === "number") {
+    return ` Verdoppelt: ${wert * 2}`;
+  } else if (typeof wert === "string") {
+    return ` Kleinbuchstaben: ${wert.toLowerCase()}`;
+  } else if (typeof wert === "boolean") {
+    return ` Boolean-Wert: ${wert ? "wahr" : "falsch"}`;
+  } else {
+    throw new Error(" Ungültiger Datentyp");
+  }
+};
+
+// Beispielaufrufe
+console.log(inputEingabe(10));          //  Verdoppelt: 20
+console.log(inputEingabe("HELLO"));     //  Kleinbuchstaben: hello
+console.log(inputEingabe(true));        //  Boolean-Wert: wahr
+
