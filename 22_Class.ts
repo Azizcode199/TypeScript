@@ -70,3 +70,6 @@ const p = new Product("Bluetooth-Kopfhörer", 49.99, 301);
 p.buyProduct();  // muss zuerst in den Warenkorb
 p.addToCart();   // wurde hinzugefügt
 p.buyProduct();  // jetzt gekauft
+
+// -------------------------------------------
+console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
