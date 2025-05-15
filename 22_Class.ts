@@ -1,20 +1,30 @@
-// Example of Class
+// Beispiel einer Klasse in TypeScript
 class Person2 {
   name: string;
   age: number;
+  subject: string[] = [];
 
-  constructor(name: string, age: number) {
+  constructor(name: string, age: number, subject: string[]) {
     this.name = name;
     this.age = age;
+    this.subject = subject;
   }
 
   greet() {
-    console.log(`Hallo, mein Name ist ${this.name}`);
+    console.log(
+      `Hallo, mein Name ist ${this.name}, ich bin ${this.age} Jahre alt und ich lerne zurzeit: ${this.subject.join(", ")}.`
+    );
   }
 }
 
-const person11 = new Person2("Anna", 30);
-person11.greet(); // → "Hallo, mein Name ist Anna"
+// Objekt erzeugen und Methode aufrufen
+const person11 = new Person2("Anna", 30, ["Java", "Python"]);
+const person12 = new Person2("Hanna", 25, ["TypeScript", "AI"]);
+person11.greet();
+person12.greet();
+
+console.log("+++++++++++++++++++++++++++++++++++++++")
+
 
 
 // 3. Define Data Type to Class Property and Functions
