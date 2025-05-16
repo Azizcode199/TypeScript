@@ -73,8 +73,8 @@ console.log(großeZahl + a1 + b1); // 9007199254740996n
 // let blockchainID: bigint = 987654321987654321987654321n;
 
 // 4. Wichtig: bigint ≠ number (nicht mischbar!)
-// ❌ let summe = 10n + 5; → Fehler
+//  let summe = 10n + 5; → Fehler
 
-// ✅ Nur bigint + bigint:
+//  Nur bigint + bigint:
 // let summe: bigint = 10n + 5n;
 // console.log(summe); // 15n
